@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #coding=utf-8
 
-import commands
+import subprocess
 import os
 import sys
 import glob
