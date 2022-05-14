@@ -487,11 +487,11 @@ class HX711:
         return GPIO.input(self.DOUT) == 0
 
     def setGain(self, gain):
-        if gain is 128:
+        if gain == 128:
             self.GAIN = 1
-        elif gain is 64:
+        elif gain == 64:
             self.GAIN = 3
-        elif gain is 32:
+        elif gain == 32:
             self.GAIN = 2
 
         GPIO.output(self.PD_SCK, False)
@@ -537,13 +537,13 @@ class HX711:
         return value
 
     def tare(self, times=10):
-		read_sum=0
-		i=0
-		self.read()
-		while i < times:
-			read_sum+=self.read()               
-			i+=1
-		self.setOffset(read_sum/times)
+        read_sum=0
+        i=0
+        self.read()
+        while i < times:
+                read_sum+=self.read()               
+                i+=1
+        self.setOffset(read_sum/times)
 
     def setOffset(self, offset):
         self.OFFSET = offset
